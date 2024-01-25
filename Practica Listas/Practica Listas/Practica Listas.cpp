@@ -1,13 +1,40 @@
 #include <iostream>
 
-class Dog {
-public:
-    int age;
-    std::string name;
-    bool hasOwner;
-    std::string breed;
+using namespace std;
 
-    Dog(int _age, const std::string& _name, bool _hasOwner, const std::string& _breed) :
+class Dog {
+private:
+    int age;
+    string name;
+    bool hasOwner;
+    string breed;   
+public:
+    int getAge() {
+        return age;
+    }
+    void setAge(int _age) {
+        age = _age;
+    }
+    string getName() {
+        string name;
+    }
+    void setName(string _name) {
+        name = _name;
+    }
+    bool gethasOver() {
+        return hasOwner;
+    }
+    void sethasOver(bool _hasOwner) {
+        hasOwner = _hasOwner;
+    }
+    string getBreed() {
+        return breed;
+    }
+    void setBreed(string _breed) {
+        breed = _breed;
+    }
+    
+    Dog(int _age, const string& _name, bool _hasOwner, const string& _breed) :
         age(_age), name(_name), hasOwner(_hasOwner), breed(_breed) {}
 };
 
@@ -31,9 +58,8 @@ public:
     }
 
     void display() {
-        
+        // Lógica de visualización aquí
     }
-    
 };
 
 int main() {
@@ -42,7 +68,7 @@ int main() {
     dogList.insert(new Dog(2, "Max", false, "Labrador"));
     dogList.insert(new Dog(5, "Lucy", true, "Poodle"));
 
-    std::cout << "List of Dogs:" << std::endl;
+    cout << "List of Dogs:" << endl;
     dogList.display();
 
     return 0;
